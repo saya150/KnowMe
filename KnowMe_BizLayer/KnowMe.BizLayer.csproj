@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="C:\Users\sayanika\source\repos\KnowMe\BizLogic.cs" Link="BizLogic.cs" />
+  </ItemGroup>
+
 </Project>

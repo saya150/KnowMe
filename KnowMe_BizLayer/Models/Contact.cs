@@ -18,7 +18,7 @@ namespace KnowMe.BizLayer
 
         public List<Spam> Spams { get; private set; }
 
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; private set; }
 
         public List<Contact_Frequency> ContactFrequencies { get; set; }
 
