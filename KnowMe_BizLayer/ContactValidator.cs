@@ -3,18 +3,20 @@ using System.Text.RegularExpressions;
 
 namespace KnowMe.BizLayer
 {
-    class ContactValidator
+    public class ContactValidator
     {
-        protected bool PhoneNumber_Validator(string phoneNumber) 
+        public bool IsValidPhoneNumber(string phoneNumber) 
         {
-            string PhoneNumber = "^(?:(?:\\+?1\\s*(?:[.-]\\s*)?)?(?:\\(\\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\\s*\\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\\s*(?:[.-]\\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\\s*(?:[.-]\\s*)?([0-9]{4})(?:\\s*(?:#|x\\.?|ext\\.?|extension)\\s*(\\d+))?$";
-            if (!Regex.IsMatch(phoneNumber, PhoneNumber)) 
+            string PhoneNumber1 = @"^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$";
+            string PhoneNumber2 = @"^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$";
+            if (Regex.IsMatch(phoneNumber, PhoneNumber1) || Regex.IsMatch(phoneNumber, PhoneNumber2)) 
+
             {
-                throw new FormatException("Invalid phone number");
+                return true;
+                
             }
-
-            return Regex.IsMatch(phoneNumber, PhoneNumber);
-
+        
+            throw new FormatException("Invalid phone number");
         }
     }
 }

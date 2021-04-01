@@ -10,6 +10,7 @@ namespace KnowMe.BizLayer
 
         public Spam(string ReportingNumber, DateTime Timestamp)
         {
+            //validate here
             this.ReportingNumber = ReportingNumber;
             this.Timestamp = Timestamp;
         }

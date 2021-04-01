@@ -4,8 +4,17 @@ namespace KnowMe.BizLayer
 {
    public class BizLogic
     {
+        //IRepository Repository;
+
+        //public BizLogic(IRepository repository)
+        //{
+        //    Repository = repository;
+        //}
+
         public Contact GetContact(string phoneNumber)
         {
+            ContactValidator contactValidator = new ContactValidator();
+            //contactValidator.IsValidPhoneNumber(phoneNumber);
             //TODO: Validate phone no
             if(string.IsNullOrWhiteSpace(phoneNumber))
             {
@@ -15,8 +24,11 @@ namespace KnowMe.BizLayer
             Contact contact = new Contact(phoneNumber);
             //TODO: Search from database with the phone no.
             //set the contact properties with the database values.
+            //return Repository.GetContact(phoneNumber);
             return contact;
         }
+
+        //write all the +tive and -tive tests for contact validator
 
         public void AddContact(Contact contact)
         {

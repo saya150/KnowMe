@@ -4,7 +4,7 @@ namespace KnowMe.BizLayer
 {
     public class Contact_Frequency
     {
-        public string FirstName { get; private set; }
+        public string FirstName { get; private set; } // validate isnullorwhitespace
         
         public string LastName { get; set; }
 
@@ -12,6 +12,7 @@ namespace KnowMe.BizLayer
 
         public Contact_Frequency(string FName,DateTime date)
         {
+            //validate here
             this.FirstName = FName;
             this.Date = date;
         }
